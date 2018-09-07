@@ -1,44 +1,29 @@
-package assignment4;
+package assignment5;
 
-class Rectangle
+class siblings
 {
-	float w;
-	float l;
-	float r_area;
-	String col;
-	void set_dimensions(float len,float wid)
+	String a;
+	String b;
+	
+	void initialize(String a, String b)
 	{
-		l=len;
-		w=wid;
-	}
-	void set_area()
-	{
-		r_area=w*l;
-	}
-	void set_color(String color)
-	{
-		col=color;
+		this.a=a;
+		this.b=b;
+		//a=a; this kind of initialization prints null
+		//b=b; this kind of initialization prints null
 	}
 	void printing()
 	{
-		System.out.println("length="+l+"\nwidth="+w+"\narea="+r_area+"\ncolor="+col);
+		System.out.println("Names of the siblings: "+a+" and "+b);
 	}
 }
 
 public class ans2 {
+
 	public static void main(String args[])
 	{
-		Rectangle r1=new Rectangle();
-		r1.set_dimensions(15, 5);
-		r1.set_area();
-		r1.set_color("blue");
-		r1.printing();
-		Rectangle r2=new Rectangle();
-		r2.l=30;
-		r2.col="yellow";
-		r2.w=12;
-		r2.printing();
-			
+		siblings chowdhry=new siblings();
+		chowdhry.initialize("Aneeshaa", "Akshay");
+		chowdhry.printing();
 	}
-
 }

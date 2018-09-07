@@ -1,49 +1,40 @@
-package assignment4;
-
+package assignment5;
 import java.util.*;
 
-class Company {
-	String companyname;
-	String address;
-	int no_of_employees;
-	int no_of_departments;
-	void gen_details(String n,String a, int noe, int nod)
+class familia
+{
+	static int family_member_count;
+	
+	
+	static void counter()
 	{
-		companyname=n;
-		address=a;
-		no_of_employees=noe;
-		no_of_departments=nod;
-		System.out.println("Company name: "+companyname+"\nAddress: "+address+"\nNumber of employees: "+no_of_employees+"\nNumber of departments: "+no_of_departments);
-		}
+		
+		family_member_count++;
+
 	}
+	static void display_count()
+	{
+		System.out.println("Number of people in the family= "+family_member_count);
+	}
+}
 
 public class ans1 {
-
-	public static void main(String args[]) {
-		Company comp=new Company();
-		
-		Scanner sc=new Scanner(System.in);
+	
+	public static void main (String args[])
+	{
 		
 
-		
-		System.out.println("Enter Company Name");
-		String name=sc.next();
-		
-		System.out.println("Enter number of employees");
-		int noe=sc.nextInt();
-		
-		System.out.println("Enter number of departments");
-		int nod=sc.nextInt();
-		
-		System.out.println("Enter Company Address");
-		String addr=sc.next();
-		
-
-		
-
-		
-		comp.gen_details(name,addr,noe,nod);
+	//familia f1=new familia();
+	Scanner sc=new Scanner(System.in);
+	String name=" ";
+	while (!name.equals("stop"))
+		{
+		System.out.println("Enter family member name");
+		name=sc.next();
+		familia.counter();
+		}
+	familia.display_count();
+	
 	}
-	
-	
+
 }
