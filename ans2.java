@@ -1,34 +1,44 @@
-package assignment3;
+package assignment4;
 
-import java.util.*;
+class Rectangle
+{
+	float w;
+	float l;
+	float r_area;
+	String col;
+	void set_dimensions(float len,float wid)
+	{
+		l=len;
+		w=wid;
+	}
+	void set_area()
+	{
+		r_area=w*l;
+	}
+	void set_color(String color)
+	{
+		col=color;
+	}
+	void printing()
+	{
+		System.out.println("length="+l+"\nwidth="+w+"\narea="+r_area+"\ncolor="+col);
+	}
+}
 
 public class ans2 {
-
-	public static void main (String args[])
+	public static void main(String args[])
 	{
-		Scanner scan=new Scanner(System.in);
-		System.out.println("Enter a number of your choice:");
-		int num=scan.nextInt();
-		
-		num=num+8;
-		System.out.println("adding 8: "+num);
-		
-		if (num % 5 == 0){
-			System.out.println("It is divisible by 5");
-		}
-		else {
-			System.out.println("It is NOT divisible by 5");
-		}
-
-		if (num % 7 == 0){
-			System.out.println("It is divisible by 7");
-		}
-		else {
-			System.out.println("It is NOT divisible by 7");
-		}
-		
-		if (num%7==0 && num%5==0) {
-			System.out.println("It is divisible by both 5 and 7");
-		}
+		Rectangle r1=new Rectangle();
+		r1.set_dimensions(15, 5);
+		r1.set_area();
+		r1.set_color("blue");
+		r1.printing();
+		Rectangle r2=new Rectangle();
+		r2.l=30;
+		r2.col="yellow";
+		r2.w=12;
+		r2.printing();
+			
 	}
+
 }
