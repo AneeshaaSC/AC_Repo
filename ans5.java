@@ -1,41 +1,27 @@
-package assignment8;
 
 public class ans5 {
-
 	public static void main(String args[])
 	{
-		String s="Women are women's ";
-		String s1="worst enemy";
-		StringBuilder s2= new StringBuilder(s1);
-		StringBuffer s3=new StringBuffer(s1);
-		
-		//s1.append(s); doesn't even compile as string class objects are unmutable
-		//s2.append(s);
-		s2.insert(0, s);
-		s3.append(s);
-		System.out.println("s2:"+s2);
-		System.out.println("s3:"+s3);
-		s3.reverse();
-		System.out.println("s3:"+s3);
+		System.out.println("Main Thread Details:  "+"\n"+"main thread name: "+Thread.currentThread().getName()+"\n"+"main thread ID: "+Thread.currentThread().getId()+"\n"+"main thread priority: "+Thread.currentThread().getPriority()+"\n"+"main thread status: "+Thread.currentThread().getState());
+		Thread t1=new Thread();
+		Thread t2=new Thread();
+		t1.setName("THREAD PIECE 1");
+		t2.setName("THREAD PIECE 2");
 
-		String s4=s2.toString();
-		System.out.println("s4:"+s4+s4.getClass().getName());
+		System.out.println("Thread-1 details:  "+"\n"+"thread1 name: "+t1.getName()+"\n"+"thread-1 ID: "+t1.getId()+"\n"+"thread-1 priority: "+t1.getPriority()+"\n"+"thread-1 status: "+t1.getState()+"\n"+"thread-1 thread group: "+t1.getThreadGroup());
+		System.out.println("Thread-2 details:  "+"\n"+"thread2 name: "+t2.getName()+"\n"+"thread-2 ID: "+t2.getId()+"\n"+"thread-2 priority: "+t2.getPriority()+"\n"+"thread-2 status: "+t2.getState()+"\n"+"thread-2 thread group: "+t2.getThreadGroup());
+
+		t1.setPriority(10);
+		t2.setPriority(6);
 		
-		StringBuilder s5= new StringBuilder(30);
-		StringBuffer s6=new StringBuffer(30);
+		System.out.println("\n"+"main thread priority: "+Thread.currentThread().getPriority());
+		System.out.println("Thread 1 priority:"+t1.getPriority());
+		System.out.println("Thread 2 priority:"+t2.getPriority());
 		
-		s5.append("Im unredeemable");
-		s6.append("Im unredeemable");
+		Thread.currentThread().setPriority(10);
 		
-		System.out.println("s5 length "+s5.length()+ " s5 capacity "+s5.capacity());
-		System.out.println("s6 length "+s6.length()+ " s6 capacity "+s6.capacity());
-		
-		s5.append("I am unredeemable. This must end. Vicious circle. No Midas touch here. Hounded by ill luck.");
-		System.out.println("s5 length "+s5.length()+ " s5 capacity "+s5.capacity());
-		
-		s5.ensureCapacity(50);
-		System.out.println("s5 length "+s5.length()+ " s5 capacity "+s5.capacity());
-		
-		
-	}
+		System.out.println("\n"+"main thread priority: "+Thread.currentThread().getPriority());
+		System.out.println("Thread 1 priority:"+t1.getPriority());
+		System.out.println("Thread 2 priority:"+t2.getPriority());
+}
 }

@@ -1,24 +1,32 @@
-package assignment8;
-
-import java.util.*;
+class MLtask extends Thread
+{
+	public void run()
+	{
+		for(int i=0;i<10;i++)
+		{
+			try
+			{
+			System.out.println("Thread name:"+getName()+"\n"+"Thread ID:"+getId()+" Iteration:"+i);
+			Thread.sleep(500);
+			}
+			catch(InterruptedException ie)
+			{
+			System.out.println("I'm trying to get some damn sleep");
+			}
+			}
+	}
+}
 
 public class ans2 {
-
 	public static void main(String args[])
 	{
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter you full name");
-		String input=sc.nextLine();
-		String name=" "+input;
-		//System.out.println("Name:"+name);
-		for (int i=0;i<name.length();i++)
-		{
-			if(name.charAt(i)==' ')
-			{
-				System.out.println(name.charAt(i+1));
-			}
-		}
-		
+		System.out.println("Creating thread objects");
+		MLtask t1=new MLtask();
+		MLtask t2=new MLtask();
+		System.out.println("Start multi-threaded task objects");
+		t1.start();
+		t2.start();
 		
 	}
+
 }

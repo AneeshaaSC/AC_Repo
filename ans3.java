@@ -1,34 +1,44 @@
-package assignment8;
-import java.util.*;
+	class task1 implements Runnable
+	{
+		public void run()
+		{
+			for(int i=0;i<=5;i++)
+			{
+				try {
+				System.out.println("task1: "+i);
+				Thread.sleep(1000);}
+				catch(InterruptedException ie) { }
+			}
+			System.out.println("Exiting thread1");
+		}
+	}
 
+	class task2 implements Runnable
+	{
+		public void run()
+		{
+			for(int i=0;i<=5;i++)
+			{
+				try 
+				{
+				System.out.println("task2: "+i);
+			    Thread.sleep(1000);
+				}
+			catch(InterruptedException ie) { }
+			}
+			System.out.println("Exiting thread2");
+		}
+	}
 public class ans3 {
-public static void main(String args[])
-{
-	Scanner sc=new Scanner(System.in);
-	System.out.println("Enter a number you want to convert");
-	int a=sc.nextInt();
-	System.out.println("\nAfter conversion to a string\n");
-	
-	String b=Integer.toString(a);
-	System.out.println("Integer.toString(a): "+b+b.getClass().getName());
-	
-	String c=String.valueOf(a);
-	System.out.println("String.valueOf(a): "+c+c.getClass().getName());
-	
-	Integer e=new Integer(a);
-	String f=e.toString();
-	System.out.println("intInstance.toString(): "+f+f.getClass().getName());
-	
-	System.out.println("\n**************************************************************************\n");
-	System.out.println("Enter a String you want to convert");
-	
-	String s1=sc.next();
-	Integer i1=new Integer(s1).intValue();
-	System.out.println("Integer i1=new Integer(s1).intValue(): "+i1+i1.getClass().getName());
-	
-	int i2 = Integer.valueOf(s1);
-	System.out.println("Integer.valueOf(s1): "+i2);
-	
-	
-}
+
+	public static void main(String args[]) {
+		task2 t2=new task2();
+		Thread THREAD2=new Thread(t2);
+		
+		task1 t1=new task1();
+		Thread THREAD1=new Thread(t1);
+		
+		THREAD1.start();
+		THREAD2.start();
+	}
 }
