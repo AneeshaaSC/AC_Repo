@@ -1,40 +1,43 @@
-package assignment5;
-import java.util.*;
-
-class familia
+class mydata
 {
-	static int family_member_count;
-	
-	
-	static void counter()
+	String name;
+	private String addr;
+	//private int phoneno; //private member that is hidden from child class /objects
+	void setvals(String a) 
 	{
-		
-		family_member_count++;
-
+		addr=a;
 	}
-	static void display_count()
+	String getvals()// indirectly accessing private variables
 	{
-		System.out.println("Number of people in the family= "+family_member_count);
+		return addr;
 	}
 }
 
-public class ans1 {
+class mydata_work extends mydata
+{
+	String company,desig;
 	
-	public static void main (String args[])
-	{
-		
+}
 
-	//familia f1=new familia();
-	Scanner sc=new Scanner(System.in);
-	String name=" ";
-	while (!name.equals("stop"))
-		{
-		System.out.println("Enter family member name");
-		name=sc.next();
-		familia.counter();
-		}
-	familia.display_count();
+
+public class ans1 {
+	public static void main(String args[]) 
+	{
+		mydata_work candidate1=new mydata_work();
+		candidate1.name="Aneeshaa";
+		candidate1.setvals("V'pura");
+		String objaddr=candidate1.getvals();
+		
+		//candidate1.phoneno="9595";// this kind of access does not even allow successful compilation
+		candidate1.company="GE";
+		candidate1.desig="Data Engineer";
 	
+		System.out.println("Name: "+candidate1.name);
+		System.out.println("Addr: "+objaddr);
+		//System.out.println("phoneno: "+phoneno);
+		System.out.println("company: "+candidate1.company);
+		System.out.println("designation: "+candidate1.desig);
+		
 	}
 
 }
