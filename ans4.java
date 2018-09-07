@@ -1,31 +1,27 @@
-class a_parent
-{
-	float a,b;
-	final float arithmetic()
-	{
-		return a/b;
-	}
-}
-class a_child extends a_parent
-{
-	float arithmetic_2()
-	{
-		return a%b;
-	}
-}
-public class ans4 {
+package assignment7;
 
+import java.util.*;
+//import java.lang.*;
+
+public class ans4 {
 	public static void main(String args[])
 	{
-		a_parent p = new a_parent();
-		p.a=7;
-		p.b=9;
-		System.out.println("Division result:"+p.arithmetic());
-		a_child c = new a_child();
-		c.a=7;
-		c.b=9;
-		System.out.println("Modulus result:"+c.arithmetic_2());
-		
+		int c;
+		do {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter first integer:");
+		int a=sc.nextInt();
+		System.out.println("Enter second integer:");
+		int b=sc.nextInt();	
+		c=a+b;
+		System.out.println("Sum of the integers:"+c);
+		if (c>10) 
+		{
+			throw new ArithmeticException("Sum goes beyond 10"); 
+		}
+		}while(c<=10);
+
+
 	}
+
 }
-// i had to rename the class as a_parent and a_child , else i get an error: type parent is already defined, type child is already defined
