@@ -1,68 +1,34 @@
-package assignment7;
-
-class ineligibility_exp extends Exception // why warning or info? what does it mean?
-{
-	ineligibility_exp()
-	{
-		System.out.println("Student is not eligible for registration. He/she must be less than 12 years of age and weigh less than 40kgs");
-	}
-}
-
-class students
-{
-	int age;
-	float weight;
-	
-	students(int age,float weight)
-	{
-		this.age=age;
-		this.weight=weight;
-	}
-
-	void check_eligibility() throws ineligibility_exp
-	{
-		if (age>12 && weight >40.0) 
-		{
-			throw new ineligibility_exp(); // why new?
-		}
-		else
-		{
-			System.out.println("Student successfully registered.");
-		}
-	}
-}
+package assignment8;
+import java.util.*;
 
 public class ans3 {
-	public static void main(String args[])
-	{
-		students s1=new students(11,39);
-		students s2=new students(15,56);
-		try
-		{
-			s1.check_eligibility();
-		}
-		catch(ineligibility_exp e)
-		{
-			
-		}
-		finally
-		{
-			System.out.println("Student age:"+s1.age);
-			System.out.println("Student age:"+s1.weight);
-		}
-		try
-		{
-			s2.check_eligibility();
-		}
-		catch(ineligibility_exp e) // why the argument or object creation?
-		{
-			
-		}
-		finally
-		{
-			System.out.println("Student age:"+s2.age);
-			System.out.println("Student age:"+s2.weight);
-		}
-	}
-
+public static void main(String args[])
+{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter a number you want to convert");
+	int a=sc.nextInt();
+	System.out.println("\nAfter conversion to a string\n");
+	
+	String b=Integer.toString(a);
+	System.out.println("Integer.toString(a): "+b+b.getClass().getName());
+	
+	String c=String.valueOf(a);
+	System.out.println("String.valueOf(a): "+c+c.getClass().getName());
+	
+	Integer e=new Integer(a);
+	String f=e.toString();
+	System.out.println("intInstance.toString(): "+f+f.getClass().getName());
+	
+	System.out.println("\n**************************************************************************\n");
+	System.out.println("Enter a String you want to convert");
+	
+	String s1=sc.next();
+	Integer i1=new Integer(s1).intValue();
+	System.out.println("Integer i1=new Integer(s1).intValue(): "+i1+i1.getClass().getName());
+	
+	int i2 = Integer.valueOf(s1);
+	System.out.println("Integer.valueOf(s1): "+i2);
+	
+	
+}
 }
