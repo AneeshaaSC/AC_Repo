@@ -1,0 +1,36 @@
+* corporate consumes risk reports
+* risk reporting team reports the balances/exposure at the admin-client level, debtor level
+* not using SIV as it doesn't have GL (walk is not complete)
+* Kyle doesnt need GECARS data, so doesn't use siv
+* 3 most important reports: Client data- details of exposure related to clients, ties records to client id,
+* dg 172 (debtor data, pulls address information related to legal owners)
+* dg 175 (pulls legal owner data with transaction ids associatd with admin-clients doing the funding for those legal owners)
+* these are sceduled reports.
+* corporate uses our data. gecars, efs and all retained co's sends their data. corp combines all data to assess exposure is out there
+* they have a big picture of where our exposure lies
+* all businesses send data to corp in same format, same attributes/naming convention etc so that they can easily merge them
+* about couple of 100 attributes. some of the attributes will be done away with because of the deregulation
+* corporate's risk team uses our data, teh modeling team uses it for stress testing/forecasting,to go into the 10q/10k,
+reporting to the feds( while we were being regulated), to govt agencies out there that need this data for investor reporting
+* based on requirements coming in by underwriters/corporate , attributes right form FL has to be brought into DWH
+* they do reporting on non-recourse/recourse balances etc.
+* treasury uses our data
+* HEF will now be aligned ti IF as opposed to international
+--Kyle/Fabio - internal reports/data governance/corporate reporting
+--Pramod - publishing reports
+--James/joey -- modeling/stress testing/PD, LGD ratings/forecasting/predicting.
+   he is gathering data from the past to predict things but its still in its nascent stages
+--  underwrites overwrite the data based on their knowledge of the deal by using substitutions
+*they can rate a client lower and decrease the amount they lend to the debtor
+*if data is not currect in our system it could affect the rating given to a customer
+
+   
+
+
+
+
+
+Underwriting Team Leader - Graeme Taggart
+
+
+
