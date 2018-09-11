@@ -1,0 +1,10 @@
+ 
+def trim_date(row_engine_id, row_end_date):
+    if row_end_date is None:
+        return str(row_engine_id) + '_' + 'nan-nan'
+    else:
+        return str(row_engine_id) + '_' + str(to_date(row_end_date, 'yyyy-mm-dd').year) + '-' + str(to_date(row_end_date, 'yyyy-mm-dd').month) + '-' + str(to_date(row_end_date, 'yyyy-mm-dd').day)
+trim_date_udf = udf(trim_date, StringType())
+
+cycles_rec_rate_join_df = cycles_rec_rate_join_df.withColumn('engine_id_end_date', trim_date_udf(cycles_rec_rate_join_df['engine_id'], cycles_rec_rate_join_df['end_date'])) 
+ 
